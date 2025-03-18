@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Data;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ViperHub.Application.Foro.Handles;
-using ViperHub.Domain.Interfaces;
+using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 using ViperHub.Infrastructure.Repository;
@@ -14,16 +15,25 @@ namespace ViperHub.IOC
 
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<GetAllCategoriaForoHandel>();
             return services;
         }
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
           
-            services.AddDbContext<ViperHubContext>(options =>
-                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ViperHubContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IDbConnection>(sp => new SqlConnection(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<ICategoriaForo, CategoriaForoRepository>();
+            services.AddScoped<IClanes, ClaneRepository>();
+            services.AddScoped<IComentariosForo, ComentarioForoRepository>();
+            services.AddScoped<IEquiposTorneos, EquiposTorneoRepository>();
+            services.AddScoped<IMultimedium,   MultimediumRepository>();
+            services.AddScoped<ITemasForo, TemasForoRepository>();
+            services.AddScoped<ITorneos, TorneoRepository>();
+            services.AddScoped<IUsuariosClan, UsuarioClaneRepository>();
+            services.AddScoped<IUsuario, UsuarioRepository>();
+
             // services.
 
             return services;

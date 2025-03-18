@@ -1,4 +1,4 @@
-﻿using ViperHub.Domain.Interfaces;
+﻿using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 
@@ -11,28 +11,28 @@ namespace ViperHub.Infrastructure.Repository
         {
             _db=viperHubContext;
         }
-        public void Add(Multimedium multimedium)
+
+        public Task<string> AddAsync(Multimedium entity)
         {
-            _db.Multimedia.Add(multimedium);
-            _db.SaveChanges();
+            throw new NotImplementedException();
         }
 
-        public void DeleteById(int id)
+        public Task<string> DeleteAsync(int id)
         {
-          
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<Multimedium> GetAll()
+        public Task<IReadOnlyList<Multimedium>> GetAllAsync()
         {
-            return _db.Multimedia.ToList();
+            throw new NotImplementedException();
         }
 
-        public Multimedium GetById(int id)
+        public Task<Multimedium> GetByIdAsync(int id)
         {
-            return _db.Multimedia.Where(x=>x.Id==id).FirstOrDefault();
+            throw new NotImplementedException();
         }
 
-        public Multimedium Update(Multimedium multimedium)
+        public Task<string> UpdateAsync(int id)
         {
             throw new NotImplementedException();
         }

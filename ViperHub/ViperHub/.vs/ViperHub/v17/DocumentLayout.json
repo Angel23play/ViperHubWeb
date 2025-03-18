@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA28A7D3-E934-4EF1-BA3A-9E727B489729}|ViperHub.IOC\\ViperHub.IOC.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA28A7D3-E934-4EF1-BA3A-9E727B489729}|ViperHub.IOC\\ViperHub.IOC.csproj|solutionrelative:viperhub.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\viperhub.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\viperhub.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|solutionrelative:viperhub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 347,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Program.cs",
+              "RelativeDocumentMoniker": "ViperHub.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Program.cs",
+              "RelativeToolTip": "ViperHub.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T02:31:06.247Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T03:34:16.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViperHub.Application",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\ViperHub.Application.csproj",
+              "RelativeDocumentMoniker": "ViperHub.Application\\ViperHub.Application.csproj",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\ViperHub.Application.csproj",
+              "RelativeToolTip": "ViperHub.Application\\ViperHub.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-16T03:33:46.734Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -29,17 +77,8 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.IOC\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "ViperHub.IOC\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.IOC\\DependencyInjection.cs",
-              "RelativeToolTip": "ViperHub.IOC\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T17:18:02.272Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
             }
           ]
         }

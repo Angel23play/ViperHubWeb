@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ViperHub.Application.Foro.Dto
 {
-    public class CategoriaForoDto
+    public class CategoriaForoDto 
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;

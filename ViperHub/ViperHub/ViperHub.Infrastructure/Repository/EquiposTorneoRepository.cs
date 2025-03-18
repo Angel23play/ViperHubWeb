@@ -1,4 +1,4 @@
-﻿using ViperHub.Domain.Interfaces;
+﻿using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 
@@ -11,28 +11,28 @@ namespace ViperHub.Infrastructure.Repository
         {
             _db=viperHubContext;
         }
-        public void Add(EquiposTorneo equiposTorneo)
+
+        public Task<string> AddAsync(EquiposTorneo entity)
         {
-            _db.EquiposTorneos.Add(equiposTorneo);
-            _db.SaveChanges();
+            throw new NotImplementedException();
         }
 
-        public void DeleteById(int id)
+        public Task<string> DeleteAsync(int id)
         {
-          
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<EquiposTorneo> GetAll()
+        public Task<IReadOnlyList<EquiposTorneo>> GetAllAsync()
         {
-            return _db.EquiposTorneos.ToList();
+            throw new NotImplementedException();
         }
 
-        public EquiposTorneo GetById(int id)
+        public Task<EquiposTorneo> GetByIdAsync(int id)
         {
-            return _db.EquiposTorneos.Where(x=>x.Id==id).FirstOrDefault();
+            throw new NotImplementedException();
         }
 
-        public EquiposTorneo Update(EquiposTorneo equiposTorneo)
+        public Task<string> UpdateAsync(int id)
         {
             throw new NotImplementedException();
         }

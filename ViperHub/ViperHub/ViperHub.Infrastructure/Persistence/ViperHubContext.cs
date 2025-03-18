@@ -9,10 +9,9 @@ public partial class ViperHubContext : DbContext
 {
 
 
-    public ViperHubContext(DbContextOptions<ViperHubContext> options)
-        : base(options)
+    public ViperHubContext(DbContextOptions<ViperHubContext> options) : base(options)
     {
-
+        this.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
     }
 
     public virtual DbSet<CategoriasForo> CategoriasForos { get; set; }

@@ -1,38 +1,40 @@
-﻿using ViperHub.Domain.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 
 namespace ViperHub.Infrastructure.Repository
 {
     public class TorneoRepository : ITorneos
+
     {
         protected readonly ViperHubContext _db;
         public TorneoRepository(ViperHubContext viperHubContext)
         {
             _db=viperHubContext;
         }
-        public void Add(Torneo torneo)
+
+        public Task<string> AddAsync(Torneo entity)
         {
-            _db.Torneos.Add(torneo);
-            _db.SaveChanges();
+            throw new NotImplementedException();
         }
 
-        public void DeleteById(int id)
+        public Task<string> DeleteAsync(int id)
         {
-          
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<Torneo> GetAll()
+        public Task<IReadOnlyList<Torneo>> GetAllAsync()
         {
-            return _db.Torneos.ToList();
+            throw new NotImplementedException();
         }
 
-        public Torneo GetById(int id)
+        public Task<Torneo> GetByIdAsync(int id)
         {
-            return _db.Torneos.Where(x=>x.Id==id).FirstOrDefault();
+            throw new NotImplementedException();
         }
 
-        public Torneo Update(Torneo torneo)
+        public Task<string> UpdateAsync(int id)
         {
             throw new NotImplementedException();
         }
