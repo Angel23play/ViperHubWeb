@@ -11,15 +11,15 @@ public partial class TemasForo
 
     public string Content { get; set; } = null!;
 
-    public DateTime? DateCreation { get; set; }
-
     public int UsuarioId { get; set; }
 
     public int CategoriaForoId { get; set; }
 
+    public DateTime? DateCreation { get; set; }
+
     public virtual CategoriasForo CategoriaForo { get; set; } = null!;
 
-    public virtual ICollection<ComentariosForo> ComentariosForos { get; set; } = new List<ComentariosForo>();
-
     public virtual Usuario Usuario { get; set; } = null!;
+
+    public virtual ICollection<ComentariosForo> ComentariosForos { get; set; } = new List<ComentariosForo>();
 }

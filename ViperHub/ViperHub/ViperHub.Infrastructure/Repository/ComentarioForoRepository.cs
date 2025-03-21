@@ -1,4 +1,6 @@
-﻿using ViperHub.Domain.Interfaces;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 
@@ -7,34 +9,74 @@ namespace ViperHub.Infrastructure.Repository
     public class ComentarioForoRepository : IComentariosForo
     {
         protected readonly ViperHubContext _db;
-        public ComentarioForoRepository(ViperHubContext viperHubContext)
+        protected readonly IMapper _mapper;
+        public ComentarioForoRepository(ViperHubContext viperHubContext, IMapper mapper)
         {
             _db=viperHubContext;
-        }
-        public void Add(ComentariosForo comentariosForo)
-        {   
-            _db.ComentariosForos.Add(comentariosForo);
-            _db.SaveChanges();
+            _mapper = mapper;
         }
 
-        public void DeleteById(int id)
+        public async Task<string> AddAsync(ComentariosForo entity)
         {
-          
+
+
+            _db.ComentariosForos.Add(entity);
+            await _db.SaveChangesAsync();
+            return "The category has been created";
         }
 
-        public IEnumerable<ComentariosForo> GetAll()
+        public async Task<string> DeleteAsync(int id)
         {
-            return _db.ComentariosForos.ToList();
+            var comment = await GetByIdAsync(id);
+
+            if (comment == null) return "Category not found!";
+
+            _db.ComentariosForos.Remove(comment);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been deleted";
+
         }
 
-        public ComentariosForo GetById(int id)
+
+        public async Task<IReadOnlyList<ComentariosForo>> GetAllAsync()
         {
-            return _db.ComentariosForos.Where(x=>x.Id==id).FirstOrDefault();
+            return await _db.ComentariosForos.ToListAsync();
+
         }
 
-        public ComentariosForo Update(ComentariosForo comentariosForo)
+
+        public async Task<ComentariosForo> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var comment = await _db.ComentariosForos.FindAsync(id);
+
+            if (comment == null)
+            {
+                throw new KeyNotFoundException($"Category with ID {id} not found.");
+            }
+
+            return comment;
+
+
+
+        }
+
+        public async Task<string> UpdateAsync(int id, ComentariosForo NewEntity)
+        {
+            var comment = await GetByIdAsync(id);
+            if (comment == null)
+            {
+                return "The category has not updated";
+
+            }
+
+
+            _mapper.Map(NewEntity, comment);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been updated";
         }
     }
 }

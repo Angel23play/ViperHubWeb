@@ -1,4 +1,6 @@
-﻿using ViperHub.Domain.Interfaces;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 
@@ -7,34 +9,79 @@ namespace ViperHub.Infrastructure.Repository
     public class UsuarioRepository : IUsuario
     {
         protected readonly ViperHubContext _db;
-        public UsuarioRepository(ViperHubContext viperHubContext)
+        protected readonly IMapper _mapper;
+        public UsuarioRepository(ViperHubContext viperHubContext, IMapper mapper)
         {
             _db=viperHubContext;
-        }
-        public void Add(Usuario usuario)
-        {
-            _db.Usuarios.Add(usuario);
-            _db.SaveChanges();
+            _mapper=mapper;
         }
 
-        public void DeleteById(int id)
+        public async Task<string> AddAsync(Usuario entity)
         {
-          
+            _db.Usuarios.Add(entity);
+            await _db.SaveChangesAsync();
+            return "The category has been created";
+            
         }
 
-        public IEnumerable<Usuario> GetAll()
+        public async Task<string> DeleteAsync(int id)
         {
-            return _db.Usuarios.ToList();
+            var users = await GetByIdAsync(id);
+
+            if (users == null) return "Category not found!";
+
+            _db.Usuarios.Remove(users);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been deleted";
+
         }
 
-        public Usuario GetById(int id)
+        public async Task<IReadOnlyList<Usuario>> GetAllAsync()
         {
-            return _db.Usuarios.Where(x=>x.Id==id).FirstOrDefault();
+     
+            return await _db.Usuarios.ToListAsync();
         }
 
-        public Usuario Update(Usuario usuario)
+        public async Task<Usuario> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var users = await _db.Usuarios.FindAsync(id);
+
+            if (users == null)
+            {
+                throw new KeyNotFoundException($"User with ID {id} not found.");
+            }
+
+            return users;
+
+
+
+        }
+
+   
+
+        public async Task<string> UpdateAsync(int id, Usuario entity)
+        {
+            var users = await GetByIdAsync(id);
+            if (users == null)
+            {
+                return "The User has not updated";
+
+            }
+
+
+            _mapper.Map(entity, users);
+
+            await _db.SaveChangesAsync();
+
+            return "The User has been updated";
         }
     }
 }
+
+
+
+
+        
+        

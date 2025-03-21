@@ -1,40 +1,84 @@
-﻿using ViperHub.Domain.Interfaces;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 
 namespace ViperHub.Infrastructure.Repository
 {
+
     public class TemasForoRepository : ITemasForo
     {
         protected readonly ViperHubContext _db;
-        public TemasForoRepository(ViperHubContext viperHubContext)
+        protected readonly IMapper _mapper;
+        public TemasForoRepository(ViperHubContext viperHubContext, IMapper mapper)
         {
             _db=viperHubContext;
-        }
-        public void Add(TemasForo temasForo)
-        {
-            _db.TemasForos.Add(temasForo);
-            _db.SaveChanges();
+            _mapper = mapper;
         }
 
-        public void DeleteById(int id)
+        public async Task<string> AddAsync(TemasForo entity)
         {
-          
+
+
+            _db.TemasForos.Add(entity);
+            await _db.SaveChangesAsync();
+            return "The category has been created";
+
         }
 
-        public IEnumerable<TemasForo> GetAll()
+        public async Task<string> DeleteAsync(int id)
         {
-            return _db.TemasForos.ToList();
+            var themes = await GetByIdAsync(id);
+
+            if (themes == null) return "Category not found!";
+
+            _db.TemasForos.Remove(themes);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been deleted";
+
         }
 
-        public TemasForo GetById(int id)
+
+        public async Task<IReadOnlyList<TemasForo>> GetAllAsync()
         {
-            return _db.TemasForos.Where(x=>x.Id==id).FirstOrDefault();
+            return await _db.TemasForos.ToListAsync();
+
         }
 
-        public TemasForo Update(TemasForo categorias)
+
+        public async Task<TemasForo> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var themes = await _db.TemasForos.FindAsync(id);
+
+            if (themes == null)
+            {
+                throw new KeyNotFoundException($"Category with ID {id} not found.");
+            }
+
+            return themes;
+
+
+
+        }
+
+        public async Task<string> UpdateAsync(int id, TemasForo NewEntity)
+        {
+            var themes = await GetByIdAsync(id);
+            if (themes == null)
+            {
+                return "The category has not updated";
+
+            }
+
+
+            _mapper.Map(NewEntity, themes);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been updated";
         }
     }
 }

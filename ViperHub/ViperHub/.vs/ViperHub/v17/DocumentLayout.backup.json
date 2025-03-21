@@ -3,8 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA28A7D3-E934-4EF1-BA3A-9E727B489729}|ViperHub.IOC\\ViperHub.IOC.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA28A7D3-E934-4EF1-BA3A-9E727B489729}|ViperHub.IOC\\ViperHub.IOC.csproj|solutionrelative:viperhub.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.api\\controllers\\clancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|solutionrelative:viperhub.api\\controllers\\clancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\membersclan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\membersclan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\themeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\themeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\usersprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\usersprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\tournamentsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\tournamentsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\teamprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\teamprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\multimediumprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\multimediumprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\commentsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\commentsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\clanprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\clanprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.api\\controllers\\categoryforocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|solutionrelative:viperhub.api\\controllers\\categoryforocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.api\\controllers\\themescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|solutionrelative:viperhub.api\\controllers\\themescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\clanmembers\\usuariosclanesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\clanmembers\\usuariosclanesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\themes\\temasfororesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\themes\\temasfororesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\comments\\comentariofororesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\comments\\comentariofororesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\clanmembers\\usuariosclanesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\clanmembers\\usuariosclanesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\clans\\clanesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\clans\\clanesresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\teams\\equipostorneoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\teams\\equipostorneoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\tournaments\\torneodtoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\tournaments\\torneodtoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\foro\\dto\\users\\usuariodtoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\foro\\dto\\users\\usuariodtoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64399318-93F1-434D-8080-3E2C18AAC6B4}|ViperHub.Infrastructure\\ViperHub.Infrastructure.csproj|c:\\users\\laptop\\documents\\c# starling\\viperhubweb\\viperhub\\viperhub\\viperhub.infrastructure\\repository\\clanerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64399318-93F1-434D-8080-3E2C18AAC6B4}|ViperHub.Infrastructure\\ViperHub.Infrastructure.csproj|solutionrelative:viperhub.infrastructure\\repository\\clanerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 347,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,17 +109,273 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.IOC\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "ViperHub.IOC\\DependencyInjection.cs",
-              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.IOC\\DependencyInjection.cs",
-              "RelativeToolTip": "ViperHub.IOC\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAPAAAAAAAAAA==",
+              "Title": "ClanController.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\ClanController.cs",
+              "RelativeDocumentMoniker": "ViperHub.Api\\Controllers\\ClanController.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\ClanController.cs",
+              "RelativeToolTip": "ViperHub.Api\\Controllers\\ClanController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAFcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T17:18:02.272Z",
+              "WhenOpened": "2025-03-19T23:31:38.434Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoryForoController.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\CategoryForoController.cs",
+              "RelativeDocumentMoniker": "ViperHub.Api\\Controllers\\CategoryForoController.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\CategoryForoController.cs",
+              "RelativeToolTip": "ViperHub.Api\\Controllers\\CategoryForoController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwCAAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T23:29:19.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UsuariosClanesDto.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesDto.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesDto.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesDto.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:31:11.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\UsersProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\UsersProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\UsersProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\UsersProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:28:48.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TournamentsProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\TournamentsProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\TournamentsProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\TournamentsProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\TournamentsProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:28:34.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ThemeProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\ThemeProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\ThemeProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\ThemeProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\ThemeProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:27:49.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TeamProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\TeamProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\TeamProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\TeamProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\TeamProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:27:34.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MultimediumProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\MultimediumProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\MultimediumProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\MultimediumProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\MultimediumProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:27:24.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MembersClan.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\MembersClan.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\MembersClan.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\MembersClan.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\MembersClan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:27:11.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CommentsProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\CommentsProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\CommentsProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\CommentsProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\CommentsProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:24:01.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClanProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\ClanProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\ClanProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\ClanProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\ClanProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:23:36.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryProfile.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "RelativeToolTip": "ViperHub.Application\\Profiles\\CategoryProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:23:00.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ThemesController.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\ThemesController.cs",
+              "RelativeDocumentMoniker": "ViperHub.Api\\Controllers\\ThemesController.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\ThemesController.cs",
+              "RelativeToolTip": "ViperHub.Api\\Controllers\\ThemesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T23:35:49.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ClaneRepository.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Infrastructure\\Repository\\ClaneRepository.cs",
+              "RelativeDocumentMoniker": "ViperHub.Infrastructure\\Repository\\ClaneRepository.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Infrastructure\\Repository\\ClaneRepository.cs",
+              "RelativeToolTip": "ViperHub.Infrastructure\\Repository\\ClaneRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:21:13.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UsuarioDtoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Users\\UsuarioDtoResponse.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\Users\\UsuarioDtoResponse.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Users\\UsuarioDtoResponse.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\Users\\UsuarioDtoResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:21:04.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TorneoDtoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Tournaments\\TorneoDtoResponse.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\Tournaments\\TorneoDtoResponse.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Tournaments\\TorneoDtoResponse.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\Tournaments\\TorneoDtoResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:20:21.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TemasForoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Themes\\TemasForoResponse.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\Themes\\TemasForoResponse.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Themes\\TemasForoResponse.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\Themes\\TemasForoResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:20:19.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EquiposTorneoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Teams\\EquiposTorneoResponse.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\Teams\\EquiposTorneoResponse.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Teams\\EquiposTorneoResponse.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\Teams\\EquiposTorneoResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:19:59.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ComentarioForoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Comments\\ComentarioForoResponse.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\Comments\\ComentarioForoResponse.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Comments\\ComentarioForoResponse.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\Comments\\ComentarioForoResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:19:31.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ClanesResponse.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Clans\\ClanesResponse.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\Clans\\ClanesResponse.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\Clans\\ClanesResponse.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\Clans\\ClanesResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:19:32.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UsuariosClanesResponse.cs",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesResponse.cs",
+              "RelativeDocumentMoniker": "ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesResponse.cs",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\C# Starling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesResponse.cs",
+              "RelativeToolTip": "ViperHub.Application\\Foro\\Dto\\ClanMembers\\UsuariosClanesResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T22:19:28.823Z"
             }
           ]
         }
