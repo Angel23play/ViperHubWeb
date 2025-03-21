@@ -8,7 +8,7 @@ using ViperHub.Domain.Models;
 
 namespace ViperHub.Application.Interfaces
 {
-    public interface ICategoriaForo : InterfaceGeneral<CategoriaForoDto>
+    public interface ICategoriaForo : InterfaceGeneral<CategoriasForo>
     {
   
     }

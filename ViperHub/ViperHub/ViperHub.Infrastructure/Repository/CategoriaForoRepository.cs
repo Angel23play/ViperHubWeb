@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Data;
+using AutoMapper;
 using ViperHub.Application.Foro.Dto;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
@@ -12,30 +13,41 @@ namespace ViperHub.Infrastructure.Repository
     public class CategoriaForoRepository : ICategoriaForo
     {
         protected readonly ViperHubContext _db;
-       
-        public CategoriaForoRepository(ViperHubContext viperHubContext)
+        protected readonly IMapper _mapper;
+
+        public CategoriaForoRepository(ViperHubContext viperHubContext, IMapper mapper)
         {
             _db = viperHubContext;
+            _mapper = mapper;
+
         }
 
-       public async Task<string> AddAsync(CategoriaForoDto entity)
+        public async Task<string> AddAsync(CategoriasForo entity)
         {
+            try
+            {
+                _db.CategoriasForos.Add(entity);
+                await _db.SaveChangesAsync();
+                return "The category has been created";
 
-            CategoriasForo categorias = new CategoriasForo { Name=entity.Name,
-              
-            };
-        
-            _db.CategoriasForos.Add(categorias);
-            await _db.SaveChangesAsync();
-            return "The category has been created";
+            }
+            catch (DbUpdateException ex) 
+            {
+                return $"Database Error: {ex.InnerException?.Message ?? ex.Message}";
+            }
+            catch(Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+
         }
 
         public async Task<string> DeleteAsync(int id)
         {
-           var category = await GetByIdAsync(id);
+            var category = await GetByIdAsync(id);
 
             if (category == null) return "Category not found!";
-            
+
             _db.CategoriasForos.Remove(category);
 
             await _db.SaveChangesAsync();
@@ -44,37 +56,47 @@ namespace ViperHub.Infrastructure.Repository
 
         }
 
-     
-        public async Task<IReadOnlyList<CategoriaForoDto>> GetAllAsync()
+
+        public async Task<IReadOnlyList<CategoriasForo>> GetAllAsync()
         {
             return await _db.CategoriasForos.ToListAsync();
-      
-        }
-
-        
-        public async Task<CategoriaForoDto> GetByIdAsync(int id)
-        {
-            return await _db.CategoriasForos.FindAsync(id);
-             
 
         }
-        
-        public async Task<string> UpdateAsync(int id)
+
+
+        public async Task<CategoriasForo> GetByIdAsync(int id)
         {
+            var category = await _db.CategoriasForos.FindAsync(id);
+
+            if (category == null)
+            {
+                throw new KeyNotFoundException($"Category with ID {id} not found.");
+            }
+
+            return category;
+
+
+
+        }
+
+        public async Task<string> UpdateAsync(int id, CategoriasForo updateCategory)
+        {
+
             var category = await GetByIdAsync(id);
             if (category == null)
             {
                 return "The category has not updated";
 
             }
-            
-          
-           
-             await  _db.SaveChangesAsync();
-            
+
+
+            _mapper.Map(updateCategory, category);
+
+            await _db.SaveChangesAsync();
+
             return "The category has been updated";
         }
-      
+
 
 
 

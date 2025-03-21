@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
@@ -9,34 +10,77 @@ namespace ViperHub.Infrastructure.Repository
 
     {
         protected readonly ViperHubContext _db;
-        public TorneoRepository(ViperHubContext viperHubContext)
+        protected readonly IMapper _mapper;
+        public TorneoRepository(ViperHubContext viperHubContext, IMapper mapper)
         {
             _db=viperHubContext;
+            _mapper = mapper;
         }
 
-        public Task<string> AddAsync(Torneo entity)
+
+        public async Task<string> AddAsync(Torneo entity)
         {
-            throw new NotImplementedException();
+
+
+            _db.Torneos.Add(entity);
+            await _db.SaveChangesAsync();
+            return "The category has been created";
+
         }
 
-        public Task<string> DeleteAsync(int id)
+        public async Task<string> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var tournament = await GetByIdAsync(id);
+
+            if (tournament == null) return "Category not found!";
+
+            _db.Torneos.Remove(tournament);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been deleted";
+
         }
 
-        public Task<IReadOnlyList<Torneo>> GetAllAsync()
+
+        public async Task<IReadOnlyList<Torneo>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _db.Torneos.ToListAsync();
+
         }
 
-        public Task<Torneo> GetByIdAsync(int id)
+
+        public async Task<Torneo> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var tournament = await _db.Torneos.FindAsync(id);
+
+            if (tournament == null)
+            {
+                throw new KeyNotFoundException($"Category with ID {id} not found.");
+            }
+
+            return tournament;
+
+
+
         }
 
-        public Task<string> UpdateAsync(int id)
+        public async Task<string> UpdateAsync(int id, Torneo NewEntity)
         {
-            throw new NotImplementedException();
+            var tournament = await GetByIdAsync(id);
+            if (tournament == null)
+            {
+                return "The category has not updated";
+
+            }
+
+
+            _mapper.Map(NewEntity, tournament);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been updated";
         }
     }
 }
+

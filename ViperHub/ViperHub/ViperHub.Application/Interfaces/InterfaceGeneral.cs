@@ -11,7 +11,7 @@ namespace ViperHub.Application.Interfaces
             Task<IReadOnlyList<T>> GetAllAsync();
             Task<T> GetByIdAsync(int id);
             Task<string> AddAsync(T entity);
-            Task<string> UpdateAsync(int id);
+            Task<string> UpdateAsync(int id, T entity);
             Task<string> DeleteAsync(int id);
         
     }

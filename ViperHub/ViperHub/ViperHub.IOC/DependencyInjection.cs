@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Profiles;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 using ViperHub.Infrastructure.Repository;
@@ -15,6 +16,9 @@ namespace ViperHub.IOC
 
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+
+
+            services.AddAutoMapper(typeof(CategoryProfile));
             return services;
         }
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)

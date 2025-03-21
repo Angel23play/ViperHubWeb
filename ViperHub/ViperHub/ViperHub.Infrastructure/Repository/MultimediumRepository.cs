@@ -1,4 +1,6 @@
-﻿using ViperHub.Application.Interfaces;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 
@@ -7,34 +9,75 @@ namespace ViperHub.Infrastructure.Repository
     public class MultimediumRepository : IMultimedium
     {
         protected readonly ViperHubContext _db;
-        public MultimediumRepository(ViperHubContext viperHubContext)
+        protected readonly IMapper _mapper;
+        public MultimediumRepository(ViperHubContext viperHubContext, IMapper mapper)
         {
-            _db=viperHubContext;
+            _db = viperHubContext;
+            _mapper = mapper;
         }
 
-        public Task<string> AddAsync(Multimedium entity)
+        public async Task<string> AddAsync(Multimedium entity)
         {
-            throw new NotImplementedException();
+
+
+            _db.Multimedia.Add(entity);
+            await _db.SaveChangesAsync();
+            return "The category has been created";
+
         }
 
-        public Task<string> DeleteAsync(int id)
+        public async Task<string> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var media = await GetByIdAsync(id);
+
+            if (media == null) return "Category not found!";
+
+            _db.Multimedia.Remove(media);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been deleted";
+
         }
 
-        public Task<IReadOnlyList<Multimedium>> GetAllAsync()
+
+        public async Task<IReadOnlyList<Multimedium>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _db.Multimedia.ToListAsync();
+
         }
 
-        public Task<Multimedium> GetByIdAsync(int id)
+
+        public async Task<Multimedium> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var media = await _db.Multimedia.FindAsync(id);
+
+            if (media == null)
+            {
+                throw new KeyNotFoundException($"Category with ID {id} not found.");
+            }
+
+            return media;
+
+
+
         }
 
-        public Task<string> UpdateAsync(int id)
+        public async Task<string> UpdateAsync(int id, Multimedium NewEntity)
         {
-            throw new NotImplementedException();
+            var media = await GetByIdAsync(id);
+            if (media == null)
+            {
+                return "The category has not updated";
+
+            }
+
+
+            _mapper.Map(NewEntity, media);
+
+            await _db.SaveChangesAsync();
+
+            return "The category has been updated";
         }
     }
 }
