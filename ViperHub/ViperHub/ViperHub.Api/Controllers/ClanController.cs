@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ViperHub.Application.Foro.Dto.Clans;
+using ViperHub.Application.Dto.Clans;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 
@@ -10,9 +10,6 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class ClanController : ControllerBase
     {
-
-
-
         protected readonly IClanes _repository;
         protected readonly IMapper _mapper;
 
@@ -64,7 +61,7 @@ namespace ViperHub.Api.Controllers
             return Ok(clanDto); // Retornamos el DTO mapeado
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteClan(int id)
         {
             var Clan = await _repository.GetByIdAsync(id);
@@ -75,10 +72,10 @@ namespace ViperHub.Api.Controllers
 
             await _repository.DeleteAsync(id);
 
-            return NoContent();
+            return Ok();
         }
-        [HttpPut]
-        public async Task<IActionResult> UpdateCategory(int id, ClanesDto entity)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCLan(int id, ClanesDto entity)
         {
             var UpdateClan = _mapper.Map<Clane>(entity);
 

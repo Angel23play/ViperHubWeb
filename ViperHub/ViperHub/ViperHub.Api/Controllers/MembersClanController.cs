@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ViperHub.Application.Foro.Dto.ClanMembers;
+using ViperHub.Application.Dto.ClanMembers;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 
@@ -62,7 +62,7 @@ namespace ViperHub.Api.Controllers
             return Ok(MemberDto); // Retornamos el DTO mapeado
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMember(int id)
         {
             var Member = await _repository.GetByIdAsync(id);
@@ -75,7 +75,7 @@ namespace ViperHub.Api.Controllers
 
             return NoContent();
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateMember(int id, UsuariosClanesDto member)
         {
             var UpdateMember = _mapper.Map<UsuarioClane>(member);

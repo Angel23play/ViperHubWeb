@@ -2,7 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
-using ViperHub.Application.Foro.Dto.Categorys;
+using ViperHub.Application.Dto.Categorys;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Repository;
@@ -73,11 +73,11 @@ namespace ViperHub.Api.Controllerss
 
         }
         
-    [HttpDelete]
+    [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var Category = await _repository.GetByIdAsync(id);
-            if (Category == null)
+            var category = await _repository.GetByIdAsync(id);
+            if (category == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
@@ -86,7 +86,7 @@ namespace ViperHub.Api.Controllerss
 
             return NoContent();
         }
-        [HttpPut]
+     [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, CategoriaForoDto category)
         {
             var UpdateCategory = _mapper.Map<CategoriasForo>(category);

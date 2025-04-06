@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ViperHub.Application.Foro.Dto.Tournaments;
+using ViperHub.Application.Dto.Tournaments;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 
@@ -10,10 +10,6 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class TournamentsController : ControllerBase
     {
-
-
-
-
         protected readonly ITorneos _repository;
         protected readonly IMapper _mapper;
 
@@ -26,11 +22,11 @@ namespace ViperHub.Api.Controllers
 
 
         [HttpGet(Name = "Torneos")]
-        public async Task<IActionResult> GetCategoriaForoAll()
+        public async Task<IActionResult> GetTournamentsAll()
         {
             var result = await _repository.GetAllAsync();
 
-            var returnAllCategorys = _mapper.Map<List<TorneoDto>>(result);
+            var returnAllCategorys = _mapper.Map<List<TorneoResponse>>(result);
 
             return Ok(returnAllCategorys);
         }
@@ -46,7 +42,7 @@ namespace ViperHub.Api.Controllers
                 return NotFound();
             }
 
-            return Ok(_mapper.Map<TorneoDto>(tournament));
+            return Ok(_mapper.Map<TorneoResponse>(tournament));
         }
 
         [HttpPost]
@@ -60,12 +56,12 @@ namespace ViperHub.Api.Controllers
             await _repository.AddAsync(tournamentEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
-            var categoryDto = _mapper.Map<TorneoDto>(tournamentEntity);
+            var tournamentsDto = _mapper.Map<TorneoDto>(tournamentEntity);
 
-            return Ok(categoryDto); // Retornamos el DTO mapeado
+            return Ok(tournamentsDto); // Retornamos el DTO mapeado
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTournament(int id)
         {
             var tournament = await _repository.GetByIdAsync(id);
@@ -78,7 +74,7 @@ namespace ViperHub.Api.Controllers
 
             return NoContent();
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTournament(int id, TorneoDto category)
         {
             var UpdateTournament = _mapper.Map<Torneo>(category);

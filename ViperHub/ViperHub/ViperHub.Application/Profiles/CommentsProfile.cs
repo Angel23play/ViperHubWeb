@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViperHub.Application.Foro.Dto.Comments;
+using ViperHub.Application.Dto.Comments;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Application.Profiles
@@ -16,6 +16,8 @@ namespace ViperHub.Application.Profiles
 
             CreateMap<ComentariosForo, ComentarioForoResponse>();
             CreateMap<ComentarioForoDto, ComentariosForo>();
+            CreateMap<ComentariosForo, ComentariosForo>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
 
         }
     }

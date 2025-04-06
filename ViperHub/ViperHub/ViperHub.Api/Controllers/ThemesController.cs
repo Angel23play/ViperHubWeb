@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ViperHub.Application.Foro.Dto.Teams;
-using ViperHub.Application.Foro.Dto.Themes;
+using ViperHub.Application.Dto.Themes;
+
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 
@@ -46,7 +46,7 @@ namespace ViperHub.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddThemes(TemasForoDto NewTeam)
+        public async Task<IActionResult> AddThemes([FromBody]TemasForoDto NewTeam)
         {
 
 
@@ -61,7 +61,7 @@ namespace ViperHub.Api.Controllers
             return Ok(TeamDto); // Retornamos el DTO mapeado
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTheme(int id)
         {
             var team = await _repository.GetByIdAsync(id);
@@ -74,7 +74,7 @@ namespace ViperHub.Api.Controllers
 
             return NoContent();
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTheme(int id, TemasForoDto category)
         {
             var UpdateCategory = _mapper.Map<TemasForo>(category);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using ViperHub.Application.Foro.Dto.ClanMembers;
+using ViperHub.Application.Dto.ClanMembers;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Application.Profiles
@@ -15,6 +15,9 @@ namespace ViperHub.Application.Profiles
         {
             CreateMap<UsuarioClane, UsuariosClanesResponse>();
             CreateMap<UsuariosClanesDto ,UsuarioClane>();
+            CreateMap<UsuarioClane, UsuarioClane>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViperHub.Application.Foro.Dto.Multimedium;
+using ViperHub.Application.Dto.Multimedium;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Application.Profiles
@@ -15,6 +15,9 @@ namespace ViperHub.Application.Profiles
         {
             CreateMap<Multimedium, MultimediumResponse>();
             CreateMap<MultimediumDto, Multimedium>();
+            CreateMap<Multimedium, Multimedium>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+
         }
     }
 }

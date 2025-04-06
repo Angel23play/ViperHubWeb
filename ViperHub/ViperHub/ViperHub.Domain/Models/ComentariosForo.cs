@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ViperHub.Domain.Models;
+namespace ViperHub.Domain.Models
+{
+
 
 public partial class ComentariosForo
 {
@@ -24,4 +26,6 @@ public partial class ComentariosForo
     public virtual TemasForo TemaForo { get; set; } = null!;
 
     public virtual Usuario Usuario { get; set; } = null!;
+}
+
 }

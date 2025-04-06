@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using ViperHub.Application.Foro.Dto.Teams;
+using ViperHub.Application.Dto.Teams;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Application.Profiles
@@ -15,6 +15,9 @@ namespace ViperHub.Application.Profiles
         {
             CreateMap<EquiposTorneo, EquiposTorneoResponse>();
             CreateMap<EquiposTorneoDto, EquiposTorneo>();
+            CreateMap<EquiposTorneo, EquiposTorneo>()
+               .ForMember(dest => dest.Id, opt => opt.Ignore());
+
         }
     }
 }

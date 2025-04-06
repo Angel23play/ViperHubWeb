@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ViperHub.Application.Foro.Dto.Users;
+using ViperHub.Application.Dto.Users;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 
@@ -30,7 +30,7 @@ namespace ViperHub.Api.Controllers
         {
             var result = await _repository.GetAllAsync();
 
-            var returnAllCategorys = _mapper.Map<List<UsuarioDto>>(result);
+            var returnAllCategorys = _mapper.Map<List<UsuarioResponse>>(result);
 
             return Ok(returnAllCategorys);
         }
@@ -46,7 +46,7 @@ namespace ViperHub.Api.Controllers
                 return NotFound();
             }
 
-            return Ok(_mapper.Map<UsuarioDto>(category));
+            return Ok(_mapper.Map<UsuarioResponse>(category));
         }
 
         [HttpPost]
@@ -65,7 +65,7 @@ namespace ViperHub.Api.Controllers
             return Ok(categoryDto); // Retornamos el DTO mapeado
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeletetUsuario(int id)
         {
             var Category = await _repository.GetByIdAsync(id);
@@ -78,10 +78,11 @@ namespace ViperHub.Api.Controllers
 
             return NoContent();
         }
-        [HttpPut]
-        public async Task<IActionResult> UpdatetUser(int id, UsuarioDto category)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatetUser(int id, UsuarioDto user)
         {
-            var UpdateUser = _mapper.Map<Usuario>(category);
+            
+            var UpdateUser = _mapper.Map<Usuario>(user);
 
             await _repository.UpdateAsync(id, UpdateUser);
             if (_repository == null)

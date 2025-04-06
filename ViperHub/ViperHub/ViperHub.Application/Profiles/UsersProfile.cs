@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using ViperHub.Application.Foro.Dto.Users;
+using ViperHub.Application.Dto.Users;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Application.Profiles
@@ -12,10 +12,13 @@ namespace ViperHub.Application.Profiles
     class UsersProfile : Profile
     {
         public UsersProfile() 
-        { 
+        {
 
-            CreateMap<Usuario,UsuarioResponse>();
+            CreateMap<Usuario, UsuarioResponse>();
             CreateMap<UsuarioDto,Usuario>();
+            CreateMap<Usuario, Usuario>()
+               .ForMember(dest => dest.Id, opt => opt.Ignore());
+
         }
     }
 }

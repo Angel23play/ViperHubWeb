@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ViperHub.Domain.Models;
+namespace ViperHub.Domain.Models
+{
+
 
 public partial class EquiposTorneo
 {
@@ -16,4 +18,6 @@ public partial class EquiposTorneo
     public virtual Clane Clan { get; set; } = null!;
 
     public virtual Torneo Torneo { get; set; } = null!;
+}
+
 }
