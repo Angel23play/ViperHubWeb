@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|c:\\users\\laptop\\documents\\cwithstarling\\viperhubweb\\viperhub\\viperhub\\viperhub.api\\controllers\\themescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|solutionrelative:viperhub.api\\controllers\\themescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\cwithstarling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\themeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\themeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\cwithstarling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\categoryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|c:\\users\\laptop\\documents\\cwithstarling\\viperhubweb\\viperhub\\viperhub\\viperhub.application\\profiles\\themeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A8CB98B-EC43-46A2-BE0F-620AD0169C4E}|ViperHub.Application\\ViperHub.Application.csproj|solutionrelative:viperhub.application\\profiles\\themeprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|c:\\users\\laptop\\documents\\cwithstarling\\viperhubweb\\viperhub\\viperhub\\viperhub.api\\controllers\\themescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|solutionrelative:viperhub.api\\controllers\\themescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E82B5490-4AA7-4634-B59C-49800C172D2D}|ViperHub.Api\\ViperHub.Api.csproj|c:\\users\\laptop\\documents\\cwithstarling\\viperhubweb\\viperhub\\viperhub\\viperhub.api\\viperhub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -198,21 +198,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 269,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "App.jsx",
-              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Web\\src\\App.jsx",
-              "RelativeDocumentMoniker": "ViperHub.Web\\src\\App.jsx",
-              "ToolTip": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Web\\src\\App.jsx",
-              "RelativeToolTip": "ViperHub.Web\\src\\App.jsx",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAowBEAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-03-31T23:51:23.957Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -231,16 +218,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Web\\src\\App.jsx",
+              "RelativeDocumentMoniker": "ViperHub.Web\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Web\\src\\App.jsx",
+              "RelativeToolTip": "ViperHub.Web\\src\\App.jsx",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-03-31T23:51:23.957Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ViperHub.Api",
+              "Title": "ViperHub.Api.csproj",
               "DocumentMoniker": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\ViperHub.Api.csproj",
               "RelativeDocumentMoniker": "ViperHub.Api\\ViperHub.Api.csproj",
               "ToolTip": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\ViperHub.Api.csproj",
               "RelativeToolTip": "ViperHub.Api\\ViperHub.Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-05T18:32:12.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T18:32:12.928Z"
             },
             {
               "$type": "Document",
@@ -252,8 +251,7 @@
               "RelativeToolTip": "ViperHub.Api\\Controllers\\CommentsController.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAIwEwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T00:38:45.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T00:38:45.181Z"
             },
             {
               "$type": "Document",
@@ -265,8 +263,7 @@
               "RelativeToolTip": "ViperHub.Api\\Controllers\\ClanController.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAIwEIAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T03:19:23.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T03:19:23.448Z"
             },
             {
               "$type": "Document",
@@ -283,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ThemeProfile.cs",
               "DocumentMoniker": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Application\\Profiles\\ThemeProfile.cs",
               "RelativeDocumentMoniker": "ViperHub.Application\\Profiles\\ThemeProfile.cs",
@@ -296,13 +293,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ThemesController.cs",
               "DocumentMoniker": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\ThemesController.cs",
               "RelativeDocumentMoniker": "ViperHub.Api\\Controllers\\ThemesController.cs",
               "ToolTip": "C:\\Users\\laptop\\Documents\\CWithStarling\\ViperHubWeb\\ViperHub\\ViperHub\\ViperHub.Api\\Controllers\\ThemesController.cs",
               "RelativeToolTip": "ViperHub.Api\\Controllers\\ThemesController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAowDcAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T03:43:55.117Z",
               "EditorCaption": ""
@@ -317,8 +314,7 @@
               "RelativeToolTip": "ViperHub.Infrastructure\\Repository\\CategoriaForoRepository.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAUwFcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T05:14:07.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T05:14:07.047Z"
             },
             {
               "$type": "Document",
