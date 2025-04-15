@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ViperHub.Application.Interfaces
+namespace ViperHub.Infrastructure.RepoInterfaces
 {
-    public interface InterfaceGeneral <T> where T : class
+    public interface InterfaceGeneralRepo <T> where T : class
     {
             Task<IReadOnlyList<T>> GetAllAsync();
             Task<T> GetByIdAsync(int id);

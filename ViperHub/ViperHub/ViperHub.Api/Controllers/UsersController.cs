@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ViperHub.Application.Dto.Users;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Api.Controllers
@@ -10,14 +11,10 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-
-
-
-
-        protected readonly IUsuario _repository;
+        protected readonly IUsuarioContract _repository;
         protected readonly IMapper _mapper;
 
-        public UsersController(IUsuario repository, IMapper mapper)
+        public UsersController(IUsuarioContract repository, IMapper mapper)
         {
 
             _repository = repository;

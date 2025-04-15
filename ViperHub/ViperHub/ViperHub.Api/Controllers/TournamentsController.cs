@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ViperHub.Application.Dto.Tournaments;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Api.Controllers
@@ -10,10 +11,10 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class TournamentsController : ControllerBase
     {
-        protected readonly ITorneos _repository;
+        protected readonly ITorneosContract _repository;
         protected readonly IMapper _mapper;
 
-        public TournamentsController(ITorneos repository, IMapper mapper)
+        public TournamentsController(ITorneosContract repository, IMapper mapper)
         {
 
             _repository = repository;

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ViperHub.Application.Dto.Multimedium;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Api.Controllers
@@ -10,13 +11,11 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class MultimediumController : ControllerBase
     {
-
-
-
-        protected readonly IMultimedium _repository;
+        
+        protected readonly IMultimediumContract _repository;
         protected readonly IMapper _mapper;
 
-        public MultimediumController(IMultimedium repository, IMapper mapper)
+        public MultimediumController(IMultimediumContract repository, IMapper mapper)
         {
 
             _repository = repository;
@@ -91,6 +90,6 @@ namespace ViperHub.Api.Controllers
 
             return Ok(UpdateMedia);
         }
-
+        
     }
 }

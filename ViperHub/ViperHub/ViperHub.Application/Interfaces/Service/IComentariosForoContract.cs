@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViperHub.Domain.Models;
+using ViperHub.Application.Core;
 
-namespace ViperHub.Application.Interfaces
+namespace ViperHub.Application.Interfaces.Service
 {
-    public interface IUsuariosClan : InterfaceGeneral<UsuarioClane>
+    public interface IComentariosForoContract : BaseEntity<ComentariosForo>
     {
-
+  
     }
 }

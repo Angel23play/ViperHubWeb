@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using ViperHub.Domain.Models;
 
-namespace ViperHub.Application.Interfaces
+namespace ViperHub.Infrastructure.RepoInterfaces
 {
-    public interface ICategoriaForo : InterfaceGeneral<CategoriasForo>
+    public interface ICategoriaForo : InterfaceGeneralRepo<CategoriasForo>
     {
   
     }

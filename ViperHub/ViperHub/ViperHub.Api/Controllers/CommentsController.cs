@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ViperHub.Application.Dto.Comments;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Api.Controllers
@@ -10,14 +11,11 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class CommentsController : ControllerBase
     {
-
-
-
-
-        protected readonly IComentariosForo _repository;
+        
+        protected readonly IComentariosForoContract _repository;
         protected readonly IMapper _mapper;
 
-        public CommentsController(IComentariosForo repository, IMapper mapper)
+        public CommentsController(IComentariosForoContract repository, IMapper mapper)
         {
 
             _repository = repository;
@@ -92,6 +90,7 @@ namespace ViperHub.Api.Controllers
 
             return Ok(UpdateComment);
         }
+        
     }
 
 }

@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ViperHub.Domain.Models;
 
-namespace ViperHub.Application.Interfaces
+namespace ViperHub.Infrastructure.RepoInterfaces
 {
-    public interface IUsuario : InterfaceGeneral<Usuario>
+    public interface IUsuariosClan : InterfaceGeneralRepo<UsuarioClane>
     {
-        
+
     }
 }

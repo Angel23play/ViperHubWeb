@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ViperHub.Application.Dto.Clans;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Api.Controllers
@@ -10,10 +11,11 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class ClanController : ControllerBase
     {
-        protected readonly IClanes _repository;
+        
+        protected readonly IClanesContract _repository;
         protected readonly IMapper _mapper;
 
-        public ClanController(IClanes repository, IMapper mapper)
+        public ClanController(IClanesContract repository, IMapper mapper)
         {
 
             _repository = repository;
@@ -88,6 +90,7 @@ namespace ViperHub.Api.Controllers
 
             return Ok(UpdateClan);
         }
+         
     }
 
 }

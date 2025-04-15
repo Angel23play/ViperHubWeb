@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ViperHub.Application.Dto.ClanMembers;
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
+using ViperHub.Infrastructure.RepoInterfaces;
 
 namespace ViperHub.Api.Controllers
 {
@@ -10,7 +11,7 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class MembersClanController : ControllerBase
     {
-
+        
         protected readonly IUsuariosClan _repository;
         protected readonly IMapper _mapper;
 
@@ -89,6 +90,7 @@ namespace ViperHub.Api.Controllers
 
             return Ok(UpdateMember);
         }
+        
     }
 
 }

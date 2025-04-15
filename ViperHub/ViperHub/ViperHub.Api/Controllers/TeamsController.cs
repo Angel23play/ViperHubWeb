@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ViperHub.Application.Dto.Teams;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Api.Controllers
@@ -11,13 +12,10 @@ namespace ViperHub.Api.Controllers
     public class TeamsController : ControllerBase
     {
 
-
-
-
-        protected readonly IEquiposTorneos _repository;
+        protected readonly IEquiposTorneosContract _repository;
         protected readonly IMapper _mapper;
 
-        public TeamsController(IEquiposTorneos repository, IMapper mapper)
+        public TeamsController(IEquiposTorneosContract repository, IMapper mapper)
         {
 
             _repository = repository;

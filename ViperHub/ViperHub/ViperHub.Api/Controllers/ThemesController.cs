@@ -4,6 +4,7 @@ using ViperHub.Application.Dto.Themes;
 
 using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
+using ViperHub.Infrastructure.RepoInterfaces;
 
 namespace ViperHub.Api.Controllers
 {
