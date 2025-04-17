@@ -88,15 +88,25 @@ function Tournaments() {
               <td>
                 <button
                   className="btn btn-warning me-2"
-                  onClick={() => handleEdit(torneo)}
+                  onClick={() => handleEdit(torneo.id)}
                 >
-                  Editar
+                  <img
+                    src="/pencil-svgrepo-com.svg"
+                    alt="Editar"
+                    width="30"
+                    height="30"
+                  />
                 </button>
                 <button
                   className="btn btn-danger"
                   onClick={() => handleDelete(torneo.id)}
                 >
-                  Eliminar
+                  <img
+                    src="/trash-svgrepo-com.svg"
+                    alt="Eliminar"
+                    width="30"
+                    height="30"
+                  />
                 </button>
               </td>
             </tr>

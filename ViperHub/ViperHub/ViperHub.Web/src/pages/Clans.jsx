@@ -59,7 +59,11 @@ function Clans() {
     try {
       if (isEditing) {
         await axios.put(`${url}Clan/${selectedClan.id}`, selectedClan);
-        setClans(clans.map((clan) => (clan.id === selectedClan.id ? selectedClan : clan)));
+        setClans(
+          clans.map((clan) =>
+            clan.id === selectedClan.id ? selectedClan : clan
+          )
+        );
       } else {
         const response = await axios.post(`${url}Clan`, selectedClan);
         setClans([...clans, response.data]);
@@ -78,7 +82,9 @@ function Clans() {
     <div>
       <h2 className="text-2xl font-bold">Explorar Clanes</h2>
       <p>Lista de clanes disponibles...</p>
-      <button className="btn btn-success mb-3" onClick={handleAdd}>Añadir Clan</button>
+      <button className="btn btn-success mb-3" onClick={handleAdd}>
+        Añadir Clan
+      </button>
 
       <div style={{ overflowX: "auto" }}>
         <table className="table table-striped table-hover">
@@ -99,7 +105,10 @@ function Clans() {
                 <td>{clan.descripcion}</td>
                 <td>{leaders[clan.liderId] || "Cargando..."}</td>
                 <td>
-                  <button className="btn btn-warning me-2" onClick={() => handleEdit(clan.id)}>
+                  <button
+                    className="btn btn-warning me-2"
+                    onClick={() => handleEdit(clan.id)}
+                  >
                     <img
                       src="/pencil-svgrepo-com.svg"
                       alt="Editar"
