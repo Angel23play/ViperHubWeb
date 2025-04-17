@@ -3,10 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Data;
 using AutoMapper;
-using ViperHub.Application.Foro.Dto;
-using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
+using ViperHub.Infrastructure.RepoInterfaces;
 
 namespace ViperHub.Infrastructure.Repository
 {

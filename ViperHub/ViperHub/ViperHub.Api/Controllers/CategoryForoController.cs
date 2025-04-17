@@ -2,8 +2,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
-using ViperHub.Application.Foro.Dto.Categorys;
+using ViperHub.Application.Dto.Categorys;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Repository;
 
@@ -14,13 +15,14 @@ namespace ViperHub.Api.Controllerss
     public class CategoryForoController : ControllerBase
     {
 
-        protected readonly ICategoriaForo _repository;
+
+        protected readonly ICategoryForoContract _service;
         protected readonly IMapper _mapper;
 
-        public CategoryForoController(ICategoriaForo repository, IMapper mapper)
+        public CategoryForoController(ICategoryForoContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -28,7 +30,7 @@ namespace ViperHub.Api.Controllerss
         [HttpGet(Name = "Categoria")]
         public async Task<IActionResult> GetCategoriaForoAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllCategorys = _mapper.Map<List<CategoriaForoResponse>>(result);
 
@@ -40,7 +42,7 @@ namespace ViperHub.Api.Controllerss
         {
 
 
-            var category = await _repository.GetByIdAsync(id);
+            var category = await _service.GetByIdAsync(id);
             if (category == null)
             {
                 return NotFound();
@@ -51,15 +53,12 @@ namespace ViperHub.Api.Controllerss
 
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoriaForoDto NewCategory) {
-
             try
             {
-
-
                 var categoryEntity = _mapper.Map<CategoriasForo>(NewCategory);
 
                 // Guardando la entidad en la base de datos
-                await _repository.AddAsync(categoryEntity);
+                await _service.AddAsync(categoryEntity);
 
                 // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
                 var categoryDto = _mapper.Map<CategoriaForoDto>(categoryEntity);
@@ -73,26 +72,26 @@ namespace ViperHub.Api.Controllerss
 
         }
         
-    [HttpDelete]
+    [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var Category = await _repository.GetByIdAsync(id);
-            if (Category == null)
+            var category = await _service.GetByIdAsync(id);
+            if (category == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
-        [HttpPut]
+     [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, CategoriaForoDto category)
         {
             var UpdateCategory = _mapper.Map<CategoriasForo>(category);
 
-            await _repository.UpdateAsync(id,UpdateCategory);
-            if (_repository == null)
+            await _service.UpdateAsync(id,UpdateCategory);
+            if (_service == null)
             {
                 return NotFound(UpdateCategory);
             }
@@ -100,6 +99,7 @@ namespace ViperHub.Api.Controllerss
             
             return Ok(UpdateCategory);
         }
+            
     }
 
 }

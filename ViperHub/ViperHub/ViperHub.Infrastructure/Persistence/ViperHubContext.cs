@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using ViperHub.Domain.Models;
 
-namespace ViperHub.Infrastructure.Persistence;
-
-public partial class ViperHubContext : DbContext
+namespace ViperHub.Infrastructure.Persistence
 {
 
 
-    public ViperHubContext(DbContextOptions<ViperHubContext> options) : base(options)
+public partial class ViperHubContext : DbContext
+{
+    public ViperHubContext()
     {
-        this.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+    }
+
+    public ViperHubContext(DbContextOptions<ViperHubContext> options)
+        : base(options)
+    {
     }
 
     public virtual DbSet<CategoriasForo> CategoriasForos { get; set; }
@@ -31,6 +35,7 @@ public partial class ViperHubContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     public virtual DbSet<UsuarioClane> UsuarioClanes { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -196,7 +201,6 @@ public partial class ViperHubContext : DbContext
             entity.HasKey(e => e.Id).HasName("PK__UsuarioC__3214EC077BB1F535");
 
             entity.Property(e => e.ClanId).HasColumnName("Clan_Id");
-            entity.Property(e => e.Rol).HasMaxLength(20);
             entity.Property(e => e.UsuarioId).HasColumnName("Usuario_Id");
 
             entity.HasOne(d => d.Clan).WithMany(p => p.UsuarioClanes)
@@ -214,4 +218,6 @@ public partial class ViperHubContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+}
+
 }

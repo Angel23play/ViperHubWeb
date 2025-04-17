@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ViperHub.Application.Foro.Dto.Teams;
-using ViperHub.Application.Foro.Dto.Themes;
+using ViperHub.Application.Dto.Themes;
+
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
+using ViperHub.Infrastructure.RepoInterfaces;
 
 namespace ViperHub.Api.Controllers
 {
@@ -11,20 +13,20 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class ThemesController : ControllerBase
     {
-        protected readonly ITemasForo _repository;
+        protected readonly ITemasForoContract _service;
         protected readonly IMapper _mapper;
 
-        public ThemesController(ITemasForo temasForo, IMapper mapper)
+        public ThemesController( ITemasForoContract service, IMapper mapper)
         {
             _mapper = mapper;
-            _repository = temasForo;
+            _service = service;
             
         }
 
         [HttpGet(Name = "Temas")]
         public async Task<IActionResult> GetTeamsAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllCategorys = _mapper.Map<List<TemasForoResponse>>(result);
 
@@ -36,7 +38,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var team = await _repository.GetByIdAsync(id);
+            var team = await _service.GetByIdAsync(id);
             if (team == null)
             {
                 return NotFound();
@@ -46,14 +48,14 @@ namespace ViperHub.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddThemes(TemasForoDto NewTeam)
+        public async Task<IActionResult> AddThemes([FromBody]TemasForoDto NewTeam)
         {
 
 
             var ThemeEntity = _mapper.Map<TemasForo>(NewTeam);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(ThemeEntity);
+            await _service.AddAsync(ThemeEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var TeamDto = _mapper.Map<TemasForoResponse>(ThemeEntity);
@@ -61,26 +63,26 @@ namespace ViperHub.Api.Controllers
             return Ok(TeamDto); // Retornamos el DTO mapeado
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTheme(int id)
         {
-            var team = await _repository.GetByIdAsync(id);
+            var team = await _service.GetByIdAsync(id);
             if (team == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTheme(int id, TemasForoDto category)
         {
             var UpdateCategory = _mapper.Map<TemasForo>(category);
 
-            await _repository.UpdateAsync(id, UpdateCategory);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateCategory);
+            if (_service == null)
             {
                 return NotFound(UpdateCategory);
             }

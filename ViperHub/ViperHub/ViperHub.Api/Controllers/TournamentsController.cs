@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ViperHub.Application.Foro.Dto.Tournaments;
+using ViperHub.Application.Dto.Tournaments;
 using ViperHub.Application.Interfaces;
+using ViperHub.Application.Interfaces.Service;
 using ViperHub.Domain.Models;
 
 namespace ViperHub.Api.Controllers
@@ -10,27 +11,23 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class TournamentsController : ControllerBase
     {
-
-
-
-
-        protected readonly ITorneos _repository;
+        protected readonly ITorneosContract _service;
         protected readonly IMapper _mapper;
 
-        public TournamentsController(ITorneos repository, IMapper mapper)
+        public TournamentsController(ITorneosContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
 
         [HttpGet(Name = "Torneos")]
-        public async Task<IActionResult> GetCategoriaForoAll()
+        public async Task<IActionResult> GetTournamentsAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
-            var returnAllCategorys = _mapper.Map<List<TorneoDto>>(result);
+            var returnAllCategorys = _mapper.Map<List<TorneoResponse>>(result);
 
             return Ok(returnAllCategorys);
         }
@@ -40,13 +37,13 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var tournament = await _repository.GetByIdAsync(id);
+            var tournament = await _service.GetByIdAsync(id);
             if (tournament == null)
             {
                 return NotFound();
             }
 
-            return Ok(_mapper.Map<TorneoDto>(tournament));
+            return Ok(_mapper.Map<TorneoResponse>(tournament));
         }
 
         [HttpPost]
@@ -57,34 +54,34 @@ namespace ViperHub.Api.Controllers
             var tournamentEntity = _mapper.Map<Torneo>(NewTournament);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(tournamentEntity);
+            await _service.AddAsync(tournamentEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
-            var categoryDto = _mapper.Map<TorneoDto>(tournamentEntity);
+            var tournamentsDto = _mapper.Map<TorneoDto>(tournamentEntity);
 
-            return Ok(categoryDto); // Retornamos el DTO mapeado
+            return Ok(tournamentsDto); // Retornamos el DTO mapeado
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTournament(int id)
         {
-            var tournament = await _repository.GetByIdAsync(id);
+            var tournament = await _service.GetByIdAsync(id);
             if (tournament == null)
             {
                 return NotFound($"Tournament with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTournament(int id, TorneoDto category)
         {
             var UpdateTournament = _mapper.Map<Torneo>(category);
 
-            await _repository.UpdateAsync(id, UpdateTournament);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateTournament);
+            if (_service == null)
             {
                 return NotFound(UpdateTournament);
             }

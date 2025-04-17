@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ViperHub.Application\ViperHub.Application.csproj" />
     <ProjectReference Include="..\ViperHub.IOC\ViperHub.IOC.csproj" />
   </ItemGroup>
 

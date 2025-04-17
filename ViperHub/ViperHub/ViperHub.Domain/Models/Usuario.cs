@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ViperHub.Domain.Models;
+namespace ViperHub.Domain.Models
+{
+
 
 public partial class Usuario
 {
@@ -30,4 +32,6 @@ public partial class Usuario
     public virtual ICollection<Torneo> Torneos { get; set; } = new List<Torneo>();
 
     public virtual ICollection<UsuarioClane> UsuarioClanes { get; set; } = new List<UsuarioClane>();
+}
+
 }

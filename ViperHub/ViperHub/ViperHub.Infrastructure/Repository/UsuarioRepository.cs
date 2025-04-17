@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
+using ViperHub.Infrastructure.RepoInterfaces;
 
 namespace ViperHub.Infrastructure.Repository
 {
@@ -12,8 +12,8 @@ namespace ViperHub.Infrastructure.Repository
         protected readonly IMapper _mapper;
         public UsuarioRepository(ViperHubContext viperHubContext, IMapper mapper)
         {
-            _db=viperHubContext;
-            _mapper=mapper;
+            _db = viperHubContext;
+            _mapper = mapper;
         }
 
         public async Task<string> AddAsync(Usuario entity)
@@ -21,7 +21,7 @@ namespace ViperHub.Infrastructure.Repository
             _db.Usuarios.Add(entity);
             await _db.SaveChangesAsync();
             return "The category has been created";
-            
+
         }
 
         public async Task<string> DeleteAsync(int id)
@@ -40,7 +40,7 @@ namespace ViperHub.Infrastructure.Repository
 
         public async Task<IReadOnlyList<Usuario>> GetAllAsync()
         {
-     
+
             return await _db.Usuarios.ToListAsync();
         }
 
@@ -59,7 +59,7 @@ namespace ViperHub.Infrastructure.Repository
 
         }
 
-   
+
 
         public async Task<string> UpdateAsync(int id, Usuario entity)
         {
@@ -83,5 +83,5 @@ namespace ViperHub.Infrastructure.Repository
 
 
 
-        
-        
+
+

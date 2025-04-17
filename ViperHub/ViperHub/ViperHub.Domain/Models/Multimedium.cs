@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ViperHub.Domain.Models;
+namespace ViperHub.Domain.Models
+{
+
 
 public partial class Multimedium
 {
@@ -16,4 +18,6 @@ public partial class Multimedium
     public DateTime? FechaSubida { get; set; }
 
     public virtual Usuario User { get; set; } = null!;
+}
+
 }

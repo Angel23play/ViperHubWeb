@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using ViperHub.Application.Interfaces;
 using ViperHub.Domain.Models;
 using ViperHub.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using ViperHub.Infrastructure.RepoInterfaces;
 
 namespace ViperHub.Infrastructure.Repository
 {
