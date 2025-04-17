@@ -12,13 +12,13 @@ namespace ViperHub.Api.Controllers
     public class CommentsController : ControllerBase
     {
         
-        protected readonly IComentariosForoContract _repository;
+        protected readonly IComentariosForoContract _service;
         protected readonly IMapper _mapper;
 
-        public CommentsController(IComentariosForoContract repository, IMapper mapper)
+        public CommentsController(IComentariosForoContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -26,7 +26,7 @@ namespace ViperHub.Api.Controllers
         [HttpGet(Name = "Comentarios")]
         public async Task<IActionResult> GetCategoriaForoAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllCategorys = _mapper.Map<List<ComentarioForoResponse>>(result);
 
@@ -38,7 +38,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var comments = await _repository.GetByIdAsync(id);
+            var comments = await _service.GetByIdAsync(id);
             if (comments == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace ViperHub.Api.Controllers
             var Comment = _mapper.Map<ComentariosForo>(NewComment);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(Comment);
+            await _service.AddAsync(Comment);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var CommentDto = _mapper.Map<ComentarioForoDto>(Comment);
@@ -66,13 +66,13 @@ namespace ViperHub.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteComment(int id)
         {
-            var Comment = await _repository.GetByIdAsync(id);
+            var Comment = await _service.GetByIdAsync(id);
             if (Comment == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
@@ -81,8 +81,8 @@ namespace ViperHub.Api.Controllers
         {
             var UpdateComment = _mapper.Map<ComentariosForo>(category);
 
-            await _repository.UpdateAsync(id, UpdateComment);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateComment);
+            if (_service == null)
             {
                 return NotFound(UpdateComment);
             }

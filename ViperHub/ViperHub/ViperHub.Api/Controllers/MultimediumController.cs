@@ -12,13 +12,13 @@ namespace ViperHub.Api.Controllers
     public class MultimediumController : ControllerBase
     {
         
-        protected readonly IMultimediumContract _repository;
+        protected readonly IMultimediumContract _service;
         protected readonly IMapper _mapper;
 
-        public MultimediumController(IMultimediumContract repository, IMapper mapper)
+        public MultimediumController(IMultimediumContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -26,7 +26,7 @@ namespace ViperHub.Api.Controllers
         [HttpGet(Name = "Multimedias")]
         public async Task<IActionResult> GetCategoriaForoAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllMedias = _mapper.Map<List<MultimediumResponse>>(result);
 
@@ -38,7 +38,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var Media = await _repository.GetByIdAsync(id);
+            var Media = await _service.GetByIdAsync(id);
             if (Media == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace ViperHub.Api.Controllers
             var categoryEntity = _mapper.Map<Multimedium>(NewCategory);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(categoryEntity);
+            await _service.AddAsync(categoryEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var categoryDto = _mapper.Map<MultimediumResponse>(categoryEntity);
@@ -66,13 +66,13 @@ namespace ViperHub.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var Category = await _repository.GetByIdAsync(id);
+            var Category = await _service.GetByIdAsync(id);
             if (Category == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
@@ -81,8 +81,8 @@ namespace ViperHub.Api.Controllers
         {
             var UpdateMedia = _mapper.Map<Multimedium>(category);
 
-            await _repository.UpdateAsync(id, UpdateMedia);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateMedia);
+            if (_service == null)
             {
                 return NotFound(UpdateMedia);
             }

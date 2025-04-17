@@ -11,13 +11,13 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class TournamentsController : ControllerBase
     {
-        protected readonly ITorneosContract _repository;
+        protected readonly ITorneosContract _service;
         protected readonly IMapper _mapper;
 
-        public TournamentsController(ITorneosContract repository, IMapper mapper)
+        public TournamentsController(ITorneosContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -25,7 +25,7 @@ namespace ViperHub.Api.Controllers
         [HttpGet(Name = "Torneos")]
         public async Task<IActionResult> GetTournamentsAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllCategorys = _mapper.Map<List<TorneoResponse>>(result);
 
@@ -37,7 +37,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var tournament = await _repository.GetByIdAsync(id);
+            var tournament = await _service.GetByIdAsync(id);
             if (tournament == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace ViperHub.Api.Controllers
             var tournamentEntity = _mapper.Map<Torneo>(NewTournament);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(tournamentEntity);
+            await _service.AddAsync(tournamentEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var tournamentsDto = _mapper.Map<TorneoDto>(tournamentEntity);
@@ -65,13 +65,13 @@ namespace ViperHub.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTournament(int id)
         {
-            var tournament = await _repository.GetByIdAsync(id);
+            var tournament = await _service.GetByIdAsync(id);
             if (tournament == null)
             {
                 return NotFound($"Tournament with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
@@ -80,8 +80,8 @@ namespace ViperHub.Api.Controllers
         {
             var UpdateTournament = _mapper.Map<Torneo>(category);
 
-            await _repository.UpdateAsync(id, UpdateTournament);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateTournament);
+            if (_service == null)
             {
                 return NotFound(UpdateTournament);
             }

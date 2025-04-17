@@ -12,13 +12,13 @@ namespace ViperHub.Api.Controllers
     public class ClanController : ControllerBase
     {
         
-        protected readonly IClanesContract _repository;
+        protected readonly IClanesContract _service;
         protected readonly IMapper _mapper;
 
-        public ClanController(IClanesContract repository, IMapper mapper)
+        public ClanController(IClanesContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -26,7 +26,7 @@ namespace ViperHub.Api.Controllers
         [HttpGet(Name = "Clanes")]
         public async Task<IActionResult> GetClanesAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllCategorys = _mapper.Map<List<ClanesResponse>>(result);
 
@@ -38,7 +38,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var clan = await _repository.GetByIdAsync(id);
+            var clan = await _service.GetByIdAsync(id);
             if (clan == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace ViperHub.Api.Controllers
             var clan = _mapper.Map<Clane>(NewClan);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(clan);
+            await _service.AddAsync(clan);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var clanDto = _mapper.Map<ClanesDto>(NewClan);
@@ -66,13 +66,13 @@ namespace ViperHub.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteClan(int id)
         {
-            var Clan = await _repository.GetByIdAsync(id);
+            var Clan = await _service.GetByIdAsync(id);
             if (Clan == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return Ok();
         }
@@ -81,8 +81,8 @@ namespace ViperHub.Api.Controllers
         {
             var UpdateClan = _mapper.Map<Clane>(entity);
 
-            await _repository.UpdateAsync(id, UpdateClan);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateClan);
+            if (_service == null)
             {
                 return NotFound(UpdateClan);
             }

@@ -12,13 +12,13 @@ namespace ViperHub.Api.Controllers
     public class MembersClanController : ControllerBase
     {
         
-        protected readonly IUsuariosClan _repository;
+        protected readonly IUsuariosClan _service;
         protected readonly IMapper _mapper;
 
-        public MembersClanController(IUsuariosClan repository, IMapper mapper)
+        public MembersClanController(IUsuariosClan service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -26,7 +26,7 @@ namespace ViperHub.Api.Controllers
         [HttpGet(Name = "Miembros")]
         public async Task<IActionResult> GetMembersAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllMembers = _mapper.Map<List<UsuariosClanesResponse>>(result);
 
@@ -38,7 +38,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var member = await _repository.GetByIdAsync(id);
+            var member = await _service.GetByIdAsync(id);
             if (member == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace ViperHub.Api.Controllers
             var MemberEntity = _mapper.Map<UsuarioClane>(NewCategory);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(MemberEntity);
+            await _service.AddAsync(MemberEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var MemberDto = _mapper.Map<UsuariosClanesResponse>(MemberEntity);
@@ -66,13 +66,13 @@ namespace ViperHub.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMember(int id)
         {
-            var Member = await _repository.GetByIdAsync(id);
+            var Member = await _service.GetByIdAsync(id);
             if (Member == null)
             {
                 return NotFound($"Member with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
@@ -81,8 +81,8 @@ namespace ViperHub.Api.Controllers
         {
             var UpdateMember = _mapper.Map<UsuarioClane>(member);
 
-            await _repository.UpdateAsync(id, UpdateMember);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateMember);
+            if (_service == null)
             {
                 return NotFound(UpdateMember);
             }

@@ -12,13 +12,13 @@ namespace ViperHub.Api.Controllers
     public class TeamsController : ControllerBase
     {
 
-        protected readonly IEquiposTorneosContract _repository;
+        protected readonly IEquiposTorneosContract _service;
         protected readonly IMapper _mapper;
 
-        public TeamsController(IEquiposTorneosContract repository, IMapper mapper)
+        public TeamsController(IEquiposTorneosContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -26,7 +26,7 @@ namespace ViperHub.Api.Controllers
         [HttpGet(Name = "Equipos")]
         public async Task<IActionResult> GetTeamsAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllCategorys = _mapper.Map<List<EquiposTorneoResponse>>(result);
 
@@ -38,7 +38,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var team = await _repository.GetByIdAsync(id);
+            var team = await _service.GetByIdAsync(id);
             if (team == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace ViperHub.Api.Controllers
             var TeamEntity = _mapper.Map<EquiposTorneo>(NewTeam);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(TeamEntity);
+            await _service.AddAsync(TeamEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var TeamDto = _mapper.Map<EquiposTorneoResponse>(TeamEntity);
@@ -66,13 +66,13 @@ namespace ViperHub.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTeam(int id)
         {
-            var team = await _repository.GetByIdAsync(id);
+            var team = await _service.GetByIdAsync(id);
             if (team == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
@@ -81,8 +81,8 @@ namespace ViperHub.Api.Controllers
         {
             var UpdateCategory = _mapper.Map<EquiposTorneo>(category);
 
-            await _repository.UpdateAsync(id, UpdateCategory);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateCategory);
+            if (_service == null)
             {
                 return NotFound(UpdateCategory);
             }

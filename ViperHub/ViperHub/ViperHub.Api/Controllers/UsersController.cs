@@ -11,13 +11,13 @@ namespace ViperHub.Api.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        protected readonly IUsuarioContract _repository;
+        protected readonly IUsuarioContract _service;
         protected readonly IMapper _mapper;
 
-        public UsersController(IUsuarioContract repository, IMapper mapper)
+        public UsersController(IUsuarioContract service, IMapper mapper)
         {
 
-            _repository = repository;
+            _service = service;
             _mapper = mapper;
         }
 
@@ -25,7 +25,7 @@ namespace ViperHub.Api.Controllers
         [HttpGet(Name = "Usuarios")]
         public async Task<IActionResult> GetUsersAll()
         {
-            var result = await _repository.GetAllAsync();
+            var result = await _service.GetAllAsync();
 
             var returnAllCategorys = _mapper.Map<List<UsuarioResponse>>(result);
 
@@ -37,7 +37,7 @@ namespace ViperHub.Api.Controllers
         {
 
 
-            var category = await _repository.GetByIdAsync(id);
+            var category = await _service.GetByIdAsync(id);
             if (category == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace ViperHub.Api.Controllers
             var categoryEntity = _mapper.Map<Usuario>(NewCategory);
 
             // Guardando la entidad en la base de datos
-            await _repository.AddAsync(categoryEntity);
+            await _service.AddAsync(categoryEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
             var categoryDto = _mapper.Map<UsuarioDto>(categoryEntity);
@@ -65,13 +65,13 @@ namespace ViperHub.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletetUsuario(int id)
         {
-            var Category = await _repository.GetByIdAsync(id);
+            var Category = await _service.GetByIdAsync(id);
             if (Category == null)
             {
                 return NotFound($"Category with ID {id} not found.");
             }
 
-            await _repository.DeleteAsync(id);
+            await _service.DeleteAsync(id);
 
             return NoContent();
         }
@@ -81,8 +81,8 @@ namespace ViperHub.Api.Controllers
             
             var UpdateUser = _mapper.Map<Usuario>(user);
 
-            await _repository.UpdateAsync(id, UpdateUser);
-            if (_repository == null)
+            await _service.UpdateAsync(id, UpdateUser);
+            if (_service == null)
             {
                 return NotFound(UpdateUser);
             }
