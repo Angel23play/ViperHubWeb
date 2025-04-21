@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+/* Animación para cambiar entre sol y luna */
+.sun-moon-icon {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+    /* Luna (modo oscuro) */
+    .sun-moon-icon.moon {
+        transform: rotate(180deg); /* Rota la luna */
+        opacity: 0.7;
+    }
+
+    /* Sol (modo claro) */
+    .sun-moon-icon.sun {
+        opacity: 1;
+    }

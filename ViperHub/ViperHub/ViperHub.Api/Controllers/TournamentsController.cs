@@ -57,7 +57,7 @@ namespace ViperHub.Api.Controllers
             await _service.AddAsync(tournamentEntity);
 
             // Mapeando la entidad guardada nuevamente a DTO para devolver la respuesta
-            var tournamentsDto = _mapper.Map<TorneoDto>(tournamentEntity);
+            var tournamentsDto = _mapper.Map<TorneoResponse>(tournamentEntity);
 
             return Ok(tournamentsDto); // Retornamos el DTO mapeado
         }

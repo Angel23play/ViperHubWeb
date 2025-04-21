@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
 
 function PostInput({ handle, postId }) {
   const [title, setTitle] = useState("");
@@ -8,6 +8,12 @@ function PostInput({ handle, postId }) {
   const [categorySelected, setCategorySelected] = useState("");
   const [errors, setErrors] = useState({});
   let url = `${import.meta.env.VITE_API_URL}`;
+
+  // Función para detectar URLs de imágenes en el contenido
+  const handleImageUrls = (content) => {
+    const regex = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|svg))/g;
+    return content.replace(regex, (match) => `<img src="${match}" alt="Imagen" class="img-fluid" />`);
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -40,8 +46,7 @@ function PostInput({ handle, postId }) {
     let newErrors = {};
     if (!title.trim()) newErrors.title = "El título es obligatorio";
     if (!content.trim()) newErrors.content = "El contenido es obligatorio";
-    if (!categorySelected)
-      newErrors.categorySelected = "Selecciona una categoría";
+    if (!categorySelected) newErrors.categorySelected = "Selecciona una categoría";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -50,11 +55,13 @@ function PostInput({ handle, postId }) {
     e.preventDefault();
     if (!validateForm()) return;
 
+    const processedContent = handleImageUrls(content); // Procesamos las imágenes en el contenido
+
     try {
       if (handle === 0) {
         const data = {
           title,
-          content,
+          content: processedContent, // Usamos el contenido con las imágenes
           usuarioId: 1,
           categoriaForoId: categorySelected,
           dateCreation: new Date().toISOString(),
@@ -65,7 +72,7 @@ function PostInput({ handle, postId }) {
         const data = {
           id: postId,
           title,
-          content,
+          content: processedContent, // Usamos el contenido con las imágenes
           usuarioId: 1,
           categoriaForoId: parseInt(categorySelected),
         };
@@ -102,10 +109,10 @@ function PostInput({ handle, postId }) {
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
+        {errors.content && <div className="text-danger">{errors.content}</div>}
+
         <select
-          className={`form-select ${
-            errors.categorySelected ? "is-invalid" : ""
-          }`}
+          className={`form-select ${errors.categorySelected ? "is-invalid" : ""}`}
           id="gameSelect"
           value={categorySelected}
           onChange={(e) => setCategorySelected(e.target.value)}
@@ -118,7 +125,6 @@ function PostInput({ handle, postId }) {
               </option>
             ))}
         </select>
-        {errors.content && <div className="text-danger">{errors.content}</div>}
 
         <button type="submit" className="btn btn-success mt-2 w-100">
           {handle === 0 ? "Publicar" : "Actualizar"}

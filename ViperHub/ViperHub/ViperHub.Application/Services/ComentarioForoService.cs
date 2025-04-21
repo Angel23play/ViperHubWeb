@@ -23,19 +23,27 @@ namespace ViperHub.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<string> AddAsync(ComentariosForo entity)
+          public async Task<string> AddAsync(ComentariosForo entity)
+    {
+        try
         {
-            try
+            // Validar que ComentarioPadreId sea null si es 0
+            if (entity.ComentarioPadreId == 0)
             {
-                await _repository.AddAsync(entity);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
+                entity.ComentarioPadreId = null;
             }
 
-            return "";
+            // Llamar al repositorio para agregar el comentario
+            await _repository.AddAsync(entity);
+
+            return "Comentario creado con éxito.";
         }
+        catch (Exception ex)
+        {
+            // Manejo de excepciones con un mensaje claro
+            throw new Exception($"Error al crear el comentario: {ex.Message}");
+        }
+    }
 
         public async Task<string> DeleteAsync(int id)
         {

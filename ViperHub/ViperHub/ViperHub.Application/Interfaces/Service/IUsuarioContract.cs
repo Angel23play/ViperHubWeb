@@ -10,6 +10,12 @@ namespace ViperHub.Application.Interfaces.Service
 {
     public interface IUsuarioContract : BaseEntity<Usuario>
     {
-        
+     
+            Task<bool> VerifyPassword(Usuario user, string password);
+            Task<string> ChangePassword(Usuario user, string newPassword);
+          
+
+
+
     }
 }

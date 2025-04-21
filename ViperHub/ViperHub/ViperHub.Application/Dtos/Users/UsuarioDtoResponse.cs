@@ -15,6 +15,7 @@ namespace ViperHub.Application.Dto.Users
         public string Email { get; set; } = null!;
         public string Username { get; set; } = null!;
 
+         public DateTime? RegisterDate { get; set; }
 
     }
 }
