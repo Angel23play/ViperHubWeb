@@ -10,10 +10,10 @@ const Footer = () => {
 
                 </a>
                 <ul className="nav justify-content-center justify-content-md-end fs-6">
-                    <li className="nav-item"><a href="#" className="nav-link px-2 text-muted"><img src="/home-1-svgrepo-com.svg" alt="icon-home" width="50" height="40" /></a></li>
-                    <li className="nav-item"><a href="#" className="nav-link px-2 text-muted"><img src="/shield-svgrepo-com.svg" alt="icon-clans"width="50" height="40"  /></a></li>
-                    <li className="nav-item"><a href="#" className="nav-link px-2 text-muted"><img src="/trophy-svgrepo-com.svg" alt="icon-clans"width="50" height="40"  /></a></li>
-                    <li className="nav-item"><a href="#" className="nav-link px-2 text-muted"><img src="/settings-svgrepo-com.svg" alt="icon-clans"width="50" height="40"  /></a></li>
+                    <li className="nav-item"><a href="/" className="nav-link px-2 text-muted"><img src="/home-1-svgrepo-com.svg" alt="icon-home" width="50" height="40" /></a></li>
+                    <li className="nav-item"><a href="/clans" className="nav-link px-2 text-muted"><img src="/shield-svgrepo-com.svg" alt="icon-clans"width="50" height="40"  /></a></li>
+                    <li className="nav-item"><a href="/tournaments" className="nav-link px-2 text-muted"><img src="/trophy-svgrepo-com.svg" alt="icon-clans"width="50" height="40"  /></a></li>
+                    <li className="nav-item"><a href="settings" className="nav-link px-2 text-muted"><img src="/settings-svgrepo-com.svg" alt="icon-clans"width="50" height="40"  /></a></li>
                 </ul>
             </div>
         </footer>
