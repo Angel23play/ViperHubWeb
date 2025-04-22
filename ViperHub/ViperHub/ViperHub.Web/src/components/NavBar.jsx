@@ -19,7 +19,7 @@ function Navbar() {
         <nav className={`navbar navbar-expand-lg ${darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"}`}>
             <div className="container">
                 <a className="navbar-brand" href="/">
-                    ViperHub
+                    <img src="/dist/ViperHuB.svg" alt="Logo" />ViperHub
                 </a>
                 <button
                     className="navbar-toggler"
