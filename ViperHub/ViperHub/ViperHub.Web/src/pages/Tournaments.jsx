@@ -305,6 +305,7 @@ function Tournaments() {
                     </div>
                 </div>
             )}
+
         </div>
     );
 }
